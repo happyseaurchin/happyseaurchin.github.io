@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>family</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Space+Mono&family=Syne:wght@600;700&display=swap">
+<link rel="stylesheet" href="kit/v1/kit.css?v=1">
+</head>
+<body>
+  <nav class="bar" aria-label="pages">
+    <a href="./">home</a>
+    <a href="map.html">map</a>
+    <a href="projects.html">projects</a>
+    <a href="diary.html">diary</a>
+    <button class="reg" type="button" aria-label="light or dark">&#9680;</button>
+  </nav>
+  <main id="page"></main>
+  <footer>every word on these pages is read live from <span class="beach"></span> as the page loads</footer>
+  <script src="config.js?v=1"></script>
+  <script src="kit/v1/words.js?v=1"></script>
+  <script src="kit/v1/kit.js?v=1"></script>
+  <script>Kit.draw(document.getElementById('page'), Kit.query('family'));</script>
+</body>
+</html>
