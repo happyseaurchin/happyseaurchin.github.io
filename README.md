@@ -45,12 +45,34 @@ Pages read the beach again every thirty seconds while they are seen. A read that
 from one that finds nothing; when the beach can't be reached, one plain line says that, never a blank
 page.
 
+## The beach button
+
+Every page also carries the beach button: one line, served by the beach itself and kept nowhere in
+this repository.
+
+```html
+<script src="https://beach.happyseaurchin.com/button/button.js" async></script>
+```
+
+It is a round button, bottom right, in a frame from the beach's own origin. **unlock** opens the beach's
+own window, where a person gives their handle, their passphrase and, if they like, an Anthropic key; with
+a key, the button takes a question to the beach and answers it inside itself. Nothing on these pages, the
+kit included, can read what is typed into it or kept there. Drag it to move it; **×** puts it away until
+the page reloads. How it is built, what it guards against and its limits:
+[pscale-commons/pscale-beach `button/`](https://github.com/pscale-commons/pscale-beach/tree/main/button).
+
+It stands beside the kit and is not wired to it yet: the answer box above still asks for a key in the
+page and keeps it on the device.
+
 ## Make your own
 
 1. On GitHub, choose **Use this template** and name your copy `<your-github-name>.github.io`.
 2. In `config.js`, set `handle` to your handle on the beach.
 3. GitHub Pages publishes from `main`. Your own blocks then drive what shows: `passport:<handle>`,
    `now:<handle>`, and `lists:<handle>` (branch 1 your projects, branch 2 your places, rank is depth).
+4. The beach button's line names the beach that serves it, and a button talks only to that beach. If
+   your handle lives on another beach, point the line in each page at `<that beach>/button/button.js`
+   (every beach that deploys pscale-beach serves its own), or take the line out.
 
 ## Where every part came from
 
@@ -66,6 +88,7 @@ licence), nor from community-recovery's `look.css`, which is Matthew's styleshee
 | dictation, copied whole | happyseaurchin-home `theme.js` (`window.dictate`, with the sentence shaping of #427) |
 | the colours, light and dark | happyseaurchin-home `theme.css` |
 | these pages, the map's grouping, the clock ladder, the answer box | written for this repository (task:weft 31 and 32) |
+| the beach button (loaded from the beach, never copied here) | [pscale-commons/pscale-beach](https://github.com/pscale-commons/pscale-beach) `button/` (#81), served at the beach's `/button/` |
 
 The kit speaks the beach's own wire: `GET ?block=<name>` for a block, `GET` with no block for the
 index, `POST ?block=<name>` with `{block, content, spindle?, secret?, new_lock?, append?}` to write.
@@ -77,9 +100,14 @@ index, `POST ?block=<name>` with `{block, content, spindle?, secret?, new_lock?,
   once their handovers stand.
 - The view line in David's laws, naming where each family is drawn: after these pages publish, at his word.
 - The kit moves to pscale-commons only when someone else takes it up.
+- The answer box handing its readings to the beach button, so no key is ever typed into these pages.
+  The button already writes a reader's own notebook, with the reader's yes; starting a new notebook
+  (setting its lock) is not something it does yet.
 
 ## Changing the pages
 
 Every script and style link carries a `?v=` mark. Change it in every page when a file changes, so a
 browser that visited before picks up the new one. The kit's path is versioned (`kit/v1/`): a change
-that would break a page goes to `kit/v2/`.
+that would break a page goes to `kit/v2/`. The beach button's line carries no `?v=`: it is not a file
+of this repository, and the beach has it checked on every load, so its changes arrive without
+touching these pages.
